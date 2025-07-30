@@ -1,0 +1,13 @@
+<!-- server/templates/dashboard.html -->
+<h2>Captured Images</h2>
+<table>
+  <tr><th>IP</th><th>Time</th><th>Image</th></tr>
+  {% for cap in captures %}
+    <tr>
+      <td>{{ cap.ip }}</td>
+      <td>{{ cap.timestamp }}</td>
+      <td><img src="/static/uploads/{{ cap.image }}" width="100"></td>
+    </tr>
+  {% endfor %}
+</table>
+
