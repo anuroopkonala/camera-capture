@@ -16,7 +16,9 @@ class Capture(db.Model):
     ip = db.Column(db.String(50))
     timestamp = db.Column(db.DateTime, default=datetime.utcnow)
     image = db.Column(db.String(100))
-
+@app.route('/')
+def index():
+    return render_template('index.html')
 @app.route('/upload', methods=['POST'])
 def upload():
     data = request.get_json()
