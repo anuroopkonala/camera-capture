@@ -17,10 +17,6 @@ class Capture(db.Model):
     timestamp = db.Column(db.DateTime, default=datetime.utcnow)
     image = db.Column(db.String(100))
 
-@app.route('\')
-def home():
-    return 'welcome to Autoplay B4rd!'
-
 @app.route('/upload', methods=['POST'])
 def upload():
     data = request.get_json()
